@@ -1,7 +1,7 @@
 # arduino-goodix
 Arduino goodix touch screen driver
 
-Based on https://github.com/netwizeBE/arduino-goodix.git
+Based on https://github.com/nik-sharky/arduino-goodix
 
 Prototype of arduino-based library for Goodix touchscreen driver chips (tested with GT911 GT9110)
 Thanks to linux/android Goodix drivers developers for references
