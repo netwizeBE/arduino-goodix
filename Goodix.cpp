@@ -1,5 +1,5 @@
-#include "Goodix.h"
-#include "Wire.h"
+#include <Goodix.h>
+#include <Wire.h>
 
 // Interrupt handling
 volatile uint8_t goodixIRQ = 0;
@@ -142,7 +142,7 @@ GTConfig* Goodix::readConfig() {
 }
 
 GTInfo* Goodix::readInfo() {
-  read(GT_REG_DATA, (uint8_t *) &info, sizeof(config));
+  read(GT_REG_DATA, (uint8_t *) &info, sizeof(info));
   return &info;
 }
 
@@ -236,7 +236,7 @@ int16_t Goodix::readInput(uint8_t *data) {
         error = read(GOODIX_READ_COORD_ADDR + 1 + GOODIX_CONTACT_SIZE, data,
               GOODIX_CONTACT_SIZE * (touch_num - 1));
     */
-    error = read(GOODIX_READ_COORD_ADDR + 1, data, GOODIX_CONTACT_SIZE * (touch_num));
+    error = read(GOODIX_READ_COORD_ADDR + 0, data, GOODIX_CONTACT_SIZE * (touch_num));
 
     if (error)
       return -error;
