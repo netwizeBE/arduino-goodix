@@ -1,11 +1,8 @@
-#define LOG Serial
-#include "log.h"
-
 #include <Wire.h>
 #include "Goodix.h"
 
-#define INT_PIN D6
-#define RST_PIN D5
+#define INT_PIN 23
+#define RST_PIN -1 // -1 if pin is connected to VCC else set pin number
 
 
 Goodix touch = Goodix();
@@ -40,7 +37,7 @@ void touchStart() {
 
 void setup() {
   Serial.begin(115200);
-  log_println("\nGoodix GT911x touch driver");
+  Serial.println("\nGoodix GT911x touch driver");
 
   Wire.setClock(400000);
   Wire.begin();

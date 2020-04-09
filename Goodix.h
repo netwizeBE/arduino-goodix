@@ -5,7 +5,6 @@
 #ifndef LOG
 #define LOG Serial
 #endif
-#include "log.h"
 #include "GoodixStructs.h"
 
 #define GOODIX_OK   0
